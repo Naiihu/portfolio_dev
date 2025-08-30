@@ -1,0 +1,52 @@
+section#mainDisplayer {
+    height: calc(100% - calc(var(--default-vertical-padding) * 2));
+    width: calc(100% - calc(var(--default-horizontal-padding) * 2));
+    padding: var(--default-vertical-padding) var(--default-horizontal-padding);
+    display: grid;
+
+    grid-template-areas: 'a b'
+                         'c d';
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+
+
+    & app-display {
+        border-radius: 5px;
+    }
+
+    & app-display.full {
+        grid-area: a / a / c / d;
+    }
+
+    & app-display.top {
+        grid-area: a / a / b / b;
+    }
+
+    & app-display.bottom {
+        grid-area: c / c / d / d;
+    }
+
+    & app-display.left {
+        grid-area: a / c / c / a;
+    }
+
+    & app-display.right {
+        grid-area: b / d / d / b;
+    }
+
+    & app-display.top.left {
+        grid-area: a;
+    }
+
+    & app-display.top.right {
+        grid-area: b;
+    }
+
+    & app-display.bottom.left {
+        grid-area: c;
+    }
+
+    & app-display.bottom.right {
+        grid-area: d;
+    }
+}

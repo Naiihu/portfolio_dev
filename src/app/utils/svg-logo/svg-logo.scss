@@ -1,0 +1,8 @@
+svg {
+    height: 100%;
+
+    path {
+        fill: var(--main-color);
+        stroke: var(--main-opposite-color)
+    }
+}

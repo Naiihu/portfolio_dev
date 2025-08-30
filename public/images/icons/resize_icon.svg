@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="50"
+   viewBox="0 0 50 50"
+   width="50"
+   version="1.1"
+   id="svg2"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <title
+     id="title1" />
+  <polyline
+     points="304 96 416 96 416 208"
+     stroke-width="17.0079"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     transform="matrix(0.19378333,0,0,0.19378983,-32.262001,-16.956066)" />
+  <line
+     stroke-width="4.90905"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     x1="47.555759"
+     x2="2.4442382"
+     y1="2.4853916"
+     y2="47.51461" />
+  <polyline
+     points="208 416 96 416 96 304"
+     stroke-width="17.0079"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     transform="matrix(0,-0.19378451,-0.19378617,0,82.262888,66.955274)" />
+</svg>

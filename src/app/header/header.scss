@@ -1,0 +1,41 @@
+header {
+    padding: 1dvh 1dvw;
+    display: flex;
+    justify-content: space-between;
+
+    height: 100%;
+    & > section {
+        display: flex;
+
+        &#branding {
+            display: flex;
+            column-gap: 2dvw;
+
+            app-svg-logo {
+                height: 100%;
+            }
+
+            h2 {
+                font-family: 'League-spartan', 'League-spartan-woff', 'Roboto-condensed-italic', 'Roboto-condensed-italic-woff', sans-serif;
+                font-weight: normal;
+
+                margin: 0;
+                font-size: 7.5dvh;
+                text-align: center;
+                align-content: end;
+                text-wrap: nowrap;
+            }
+        }
+
+        &#actions {
+            app-theme-switcher {
+                height: 100%;
+                width: 8dvw;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

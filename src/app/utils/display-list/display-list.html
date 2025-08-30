@@ -1,0 +1,7 @@
+<section id="displayList" class="glassy">
+    @if (cards) {
+        @for (card of cards; track $index) {
+            <app-display [jsonContent]="card" class="draggable"></app-display>
+        }
+    }
+</section>

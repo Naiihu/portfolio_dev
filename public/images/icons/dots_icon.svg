@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 50 50"
+   version="1.1"
+   id="svg6"
+   width="50"
+   height="50"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <g
+     id="g6"
+     transform="translate(-48,-70)">
+    <circle
+       cx="51.75"
+       cy="83.75"
+       r="3.75"
+       id="circle1"
+       style="stroke-width:0.3125" />
+    <circle
+       cx="73"
+       cy="83.75"
+       r="3.75"
+       id="circle2"
+       style="stroke-width:0.3125" />
+    <circle
+       cx="94.25"
+       cy="83.75"
+       r="3.75"
+       id="circle3"
+       style="stroke-width:0.3125" />
+    <circle
+       cx="51.75"
+       cy="106.25"
+       r="3.75"
+       id="circle4"
+       style="stroke-width:0.3125" />
+    <circle
+       cx="73"
+       cy="106.25"
+       r="3.75"
+       id="circle5"
+       style="stroke-width:0.3125" />
+    <circle
+       cx="94.25"
+       cy="106.25"
+       r="3.75"
+       id="circle6"
+       style="stroke-width:0.3125" />
+  </g>
+</svg>

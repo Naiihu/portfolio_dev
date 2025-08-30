@@ -1,0 +1,141 @@
+
+article {
+  height: calc(100% - calc(var(--default-vertical-padding) * 2));
+  width: calc(100% - calc(var(--default-horizontal-padding) * 2));
+  overflow-y: scroll;
+  padding: var(--default-vertical-padding) var(--default-horizontal-padding);
+  position: relative;
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  div[id^=utils_zone] {
+    width: 50%;
+    height: 3dvh;
+    position: absolute;
+    left: 25%;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    border-radius: 0 0 5px 5px;
+
+    background-color: var(--background-color);
+
+    opacity: 0;
+
+    app-svg-icon {
+        display: block;
+        height: 50%;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+
+    transition: opacity 250ms ease-in-out;
+  }
+
+  img {
+    height: fit-content;
+    width: 33%;
+
+    --top: 0;
+    --bottom: 0;
+
+    &.left {
+      float: left;
+      --left: 0;
+      --right: 0;
+    }
+
+    &.right {
+      float: right;
+      --right: 99%;
+      --left: 0;
+    }
+
+    &.bottom {
+      position: relative;
+      top: 80%;
+      --top: 60%;
+    }
+
+    shape-outside: inset(var(--top) var(--right) var(--bottom) var(--left));
+    -webkit-shape-outside: inset(var(--top) var(--right) var(--bottom) var(--left));
+
+    margin: 0;
+    margin-right: var(--default-horizontal-padding);
+
+    border-radius: 25px;
+  }
+
+  section.content {
+    width: 100%;
+    height: 100%;
+
+    * {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 4.5dvh;
+      text-align: center;
+    }
+
+    div {
+      font-size: 2.5dvh;
+      text-overflow: ellipsis;
+
+      &.text {
+        margin-top: 2dvh;
+
+      }
+    }
+  }
+
+  .figurePlaceholder {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+
+    border-radius: 25px;
+
+    &:nth-of-type(2n+1) {
+      left: 50%;
+    }
+
+    &:nth-of-type(2n) {
+      left: 0;
+    }
+
+    &:nth-of-type(n+1) {
+      top: 0;
+    }
+
+    &:nth-of-type(n+4) {
+      top: 50%;
+    }
+  }
+
+  &.small {
+    img.bottom {
+      --top: 35%;
+    }
+  }
+};
+
+@media screen and (orientation: portrait) {
+  article {
+    img {
+      max-width: 100%;
+
+      float: none;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<article [id]="elementId" (drop)="drop($event)" (dragover)="dragOver($event)" [class]="`${isSmall ? 'small' : ''} card`">
+    <div class="draggable" [id]="`utils_zone_${elementId}`">
+        <app-svg-icon name="resize"></app-svg-icon>
+        <app-svg-icon name="dots"></app-svg-icon>
+        <app-svg-icon name="grid"></app-svg-icon>
+    </div>
+    @if (this.jsonContent.imgUrl) {
+        <img class="left" [src]="this.jsonContent.imgUrl" [alt]="this.jsonContent.imgAlt" draggable="true" [id]="`figure_${elementId}`" (dragstart)="dragStart($event)" (dragend)="dragEnd()">
+    }
+    <section class="content">
+        <h2>{{this.jsonContent.title}}</h2>
+        <div class="text" [innerHTML]="htmlString"></div>
+    </section>
+    @for (index of [1, 2, 3, 4]; track index) {
+        <div [id]="`dragZone_${elementId}_${index}`" class="figurePlaceholder {{hideDragZones ? 'hidden' : ''}}"></div>
+    }
+</article>

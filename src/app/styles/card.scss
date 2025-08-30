@@ -1,0 +1,20 @@
+.card {
+    .text {
+        .textWrapper {
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.5dvh;
+
+            p, h4 {
+                margin: 0;
+            }
+
+            .myself, .languages {
+                display: grid;
+                grid-template-columns: repeat(2, 50%);
+            }
+        }
+
+        display: block;
+    }
+}

@@ -1,0 +1,15 @@
+section#displayList {
+    height: calc(100% - calc(var(--default-vertical-padding) * 2));
+    width: calc(100% - calc(var(--default-horizontal-padding) * 2));
+    padding: var(--default-vertical-padding) var(--default-horizontal-padding);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    app-display {
+        height: calc(calc(100% / 3) - 2dvh);
+
+        border-radius: 5px;
+    }
+}

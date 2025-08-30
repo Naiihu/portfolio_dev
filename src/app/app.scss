@@ -1,0 +1,27 @@
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    app-header {
+        height: 7.5dvh;
+    }
+
+    section#displays {
+        display: flex;
+        justify-content: space-between;
+
+        app-main-displayer {
+            display: block;
+            width: 60dvw;
+            height: 85dvh;
+        }
+
+        app-display-list {
+            display: block;
+            width: 35dvw;
+            height: 85dvh;
+        }
+    }
+}

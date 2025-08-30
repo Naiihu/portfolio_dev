@@ -1,0 +1,21 @@
+svg {
+    height: 100%;
+
+    & use::part(symbol) {
+        height: 100%;
+    }
+
+    & use::part(fill) {
+        fill: var(--main-color);
+    }
+
+    & use::part(stroke) {
+        stroke: var(--main-color);
+        fill: none;
+    }
+
+    & use::part(stroke)::part(fill) {
+        fill: var(--main-color);
+        stroke: var(--main-color);
+    }
+}

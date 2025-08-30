@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIENT Side - SVG 2 PNG - JS only</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CLIENT Side only - SVG 2 PNG</h1>
+    <input type="file" id="svgInput" accept=".svg">
+    <h3>Resize</h3>
+    <div class="resize">
+        <div class="width">
+            <label for="width">Width : </label>
+            <input type="number" name="width"/>
+        </div>
+        <div class="height">
+            <label for="height">Height : </label>
+            <input type="number" name="height"/>
+        </div>
+    </div>
+    <input type="button" value="Convertir en PNG" onclick="convert()">
+    <img id="pngImg" alt="PNG Output" src=""/>
+    <button onclick="downloadImg()">Download PNG output</button>
+    <p>Credit to <a href="https://github.com/tatsuyasusukida/">tatsuyasusukida/</a> for the documentation help at : <a href="https://gist.github.com/tatsuyasusukida/1261585e3422da5645a1cbb9cf8813d6">https://gist.github.com/tatsuyasusukida/1261585e3422da5645a1cbb9cf8813d6</a></p>
+</body>
+</html>

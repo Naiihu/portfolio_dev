@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <symbol part="symbol" id="resize" viewBox="0 0 50 50">
+            <polyline
+                part="stroke"
+                points="304 96 416 96 416 208"
+                stroke-width="17.0079"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                transform="matrix(0.19378333,0,0,0.19378983,-32.262001,-16.956066)" />
+            <line
+                part="stroke"
+                stroke-width="4.90905"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                x1="47.555759"
+                x2="2.4442382"
+                y1="2.4853916"
+                y2="47.51461" />
+            <polyline
+                part="stroke"
+                points="208 416 96 416 96 304"
+                stroke-width="17.0079"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                transform="matrix(0,-0.19378451,-0.19378617,0,82.262888,66.955274)" />
+        </symbol>
+        <symbol viewBox="0 0 50 50" id="dots">
+            <g
+                transform="translate(-48,-70)">
+                <circle
+                    part="fill"
+                    cx="51.75"
+                    cy="83.75"
+                    r="3.75"
+                    stroke-width="0.3125" />
+                <circle
+                    part="fill"
+                    cx="73"
+                    cy="83.75"
+                    r="3.75"
+                    stroke-width="0.3125" />
+                <circle
+                    part="fill"
+                    cx="94.25"
+                    cy="83.75"
+                    r="3.75"
+                    stroke-width="0.3125" />
+                <circle
+                    part="fill"
+                    cx="51.75"
+                    cy="106.25"
+                    r="3.75"
+                    stroke-width="0.3125" />
+                <circle
+                    part="fill"
+                    cx="73"
+                    cy="106.25"
+                    r="3.75"
+                    stroke-width="0.3125" />
+                <circle
+                    part="fill"
+                    cx="94.25"
+                    cy="106.25"
+                    r="3.75"
+                    stroke-width="0.3125" />
+            </g>
+        </symbol>
+        <symbol part="symbol" id="grid" viewBox="0 0 50 50">
+            <path
+                d="M 17.7505,2.125 H 2.1255 v 45.7505 h 15.625 z m 30.124,5e-4 h -15.625 v 15.625 h 15.625 z m 0,30.124 v 15.625 H 32.2495 V 32.2495 Z M 5e-4,2.125 C 5e-4,0.3991102 0.3996102,0 2.1255,0 h 15.625 c 1.72589,0 2.125,0.3991102 2.125,2.125 v 45.7505 c 0,1.72589 -0.39911,2.125 -2.125,2.125 H 2.1255 c -1.7258898,0 -2.125,-0.39911 -2.125,-2.125 z m 30.124,5e-4 c 0,-1.7258898 0.39911,-2.125 2.125,-2.125 h 15.625 c 1.72589,0 2.125,0.3991102 2.125,2.125 v 15.625 c 0,1.72589 -0.39911,2.125 -2.125,2.125 h -15.625 c -1.72589,0 -2.125,-0.39911 -2.125,-2.125 z m 2.125,27.999 c -1.72589,0 -2.125,0.39911 -2.125,2.125 v 15.625 c 0,1.72589 0.39911,2.125 2.125,2.125 h 15.625 c 1.72589,0 2.125,-0.39911 2.125,-2.125 v -15.625 c 0,-1.72589 -0.39911,-2.125 -2.125,-2.125 z"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                part="stroke" />
+        </symbol>
+    </defs>
+</svg>

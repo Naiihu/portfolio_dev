@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('/fonts/Roboto_Condensed/static/RobotoCondensed-Regular.woff2') format('woff2');
+}
+
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body, html {
+    margin: 0;
+}
+
+body {
+    height: 50dvh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+body *:not(img){
+    width: calc(100dvw / 3);
+}
+
+body h1, body h3{
+    text-align: center;
+}
+
+body img{
+    object-fit: contain;
+    max-width: 15dvw;
+    max-height: 15dvh;
+}
+
+body .resize {
+    display: flex;
+    justify-content: space-between;
+}
+
+body .resize div {
+    width: 45%;
+    display: flex;
+    gap: 1dvw;
+}
+
+body .resize div label{
+    width: max-content;
+    white-space: nowrap;
+}
+
+body .resize div input{
+    flex-grow: 1;
+}

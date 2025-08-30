@@ -1,0 +1,7 @@
+<section id="mainDisplayer" class="glassy">
+    @if (cards) {
+        @for (card of cards; track $index) {
+            <app-display [jsonContent]="card" [class]="`draggable ${defaultPositions[cards.length][$index]}`"></app-display>
+        }
+    }
+</section>
