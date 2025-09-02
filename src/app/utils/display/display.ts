@@ -36,79 +36,45 @@ export class Display implements OnInit, OnDestroy {
   protected element = inject(ElementRef);
 
   ngOnInit(): void {
-    if(this.jsonContent.template) {
+    if (this.jsonContent.template) {
       this.fetchHtml(this.jsonContent.template);
     } else {
       this.sanitizeHtml(this.jsonContent.text ?? '').subscribe(value => {
+        const domParser = new DOMParser();
+        const doc = domParser.parseFromString(value, 'text/html');
+        const ageElem = doc.querySelector('.age');
+
+        if (ageElem) {
+          const birthDate = new Date(2003, 6, 2); // 2 Juillet 2003
+
+          const ageDifMs = Date.now() - birthDate.getTime();
+          const ageDate = new Date(ageDifMs);
+
+          const age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+          ageElem.textContent = age + ' ans';
+          value = doc.body.innerHTML;
+        }
+
         this.htmlString = value;
       });
     }
   }
 
   ngOnDestroy(): void {
-      this.aSubscriptions.forEach(subscription => subscription.unsubscribe());
+    this.aSubscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
   /** */
   protected drop(event: DragEvent) {
-    if (event.dataTransfer) {
-      const draggedElemId = event.dataTransfer.getData('application/dragFigure');
-
-      const draggedElem = this.frontEndService.getDocument()?.getElementById(draggedElemId);
-
-      if (draggedElem) {
-        draggedElem.classList.forEach((elem: string) => draggedElem.classList.remove(elem));
-
-        switch ((event.target as HTMLDivElement).id) {
-          case `dragZone_${this.elementId}_1`:
-            draggedElem.classList.add('left');
-            break;
-          case `dragZone_${this.elementId}_2`:
-            draggedElem.classList.add('right');
-            break;
-           case `dragZone_${this.elementId}_3`:
-            draggedElem.classList.add('left');
-            draggedElem.classList.add('bottom');
-            break;
-          case `dragZone_${this.elementId}_4`:
-            draggedElem.classList.add('right');
-            draggedElem.classList.add('bottom');
-            break;
-        }
-      }
-    }
+    this.handleFigurePlacement(event);
   }
 
   /** */
   protected dragOver(event: DragEvent) {
     event.preventDefault();
 
-    if (event.dataTransfer) {
-      const draggedElemId = event.dataTransfer.getData('application/dragFigure');
-
-      const draggedElem = this.frontEndService.getDocument()?.getElementById(draggedElemId) ?? this.frontEndService.getDocument()?.getElementById(this.draggedElemId);
-
-      if (draggedElem) {
-        draggedElem.classList.forEach((elem: string) => draggedElem.classList.remove(elem));
-
-        switch ((event.target as HTMLDivElement).id) {
-          case `dragZone_${this.elementId}_1`:
-            draggedElem.classList.add('left');
-            break;
-          case `dragZone_${this.elementId}_2`:
-            draggedElem.classList.add('right');
-            break;
-           case `dragZone_${this.elementId}_3`:
-            draggedElem.classList.add('left');
-            draggedElem.classList.add('bottom');
-            break;
-          case `dragZone_${this.elementId}_4`:
-            draggedElem.classList.add('right');
-            draggedElem.classList.add('bottom');
-            break;
-        }
-      }
-    }
+    this.handleFigurePlacement(event);
   }
 
   protected dragStart(event: DragEvent) {
@@ -139,5 +105,50 @@ export class Display implements OnInit, OnDestroy {
         this.cdr.markForCheck();
       });
     });
+  }
+
+  private handleFigurePlacement(event: DragEvent) {
+    if (event.dataTransfer) {
+      const draggedElemId = event.dataTransfer.getData('application/dragFigure');
+
+      const draggedElem = this.frontEndService.getDocument()?.getElementById(draggedElemId) ?? this.frontEndService.getDocument()?.getElementById(this.draggedElemId);
+
+      if (draggedElem) {
+        draggedElem.classList.forEach((elem: string) => draggedElem.classList.remove(elem));
+
+        switch ((event.target as HTMLDivElement).id) {
+          case `dragZone_${this.elementId}_1`:
+            draggedElem.classList.add('left');
+            break;
+          case `dragZone_${this.elementId}_2`:
+            draggedElem.classList.add('right');
+            break;
+          case `dragZone_${this.elementId}_3`:
+            draggedElem.classList.add('left');
+            draggedElem.classList.add('bottom');
+            break;
+          case `dragZone_${this.elementId}_4`:
+            draggedElem.classList.add('right');
+            draggedElem.classList.add('bottom');
+            break;
+          default:
+            draggedElem.classList.add('left');
+            break;
+        }
+      }
+
+      const article: HTMLElement = this.element.nativeElement.querySelector('article');
+      const contentSection: HTMLElement = article.querySelector('.content') ?? article;
+
+      let articleHeight = 0;
+
+      contentSection.childNodes.forEach((node: ChildNode) => {
+        if (node.nodeName !== 'FIGURE') {
+          articleHeight += (node as HTMLElement).offsetHeight ?? 0;
+        }
+      });
+
+      article.style.height = articleHeight + 'px';
+    }
   }
 }

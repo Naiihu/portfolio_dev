@@ -1,20 +1,27 @@
 .card {
-    .text {
-        .textWrapper {
-            display: flex;
-            flex-direction: column;
-            row-gap: 0.5dvh;
+  .text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5dvh;
 
-            p, h4 {
-                margin: 0;
-            }
-
-            .myself, .languages {
-                display: grid;
-                grid-template-columns: repeat(2, 50%);
-            }
-        }
-
-        display: block;
+    p,
+    h4 {
+      margin: 0;
     }
+
+    .myself,
+    .languages {
+      display: grid;
+      grid-template-columns: repeat(2, 45%);
+      column-gap: 5%;
+      margin-bottom: 1dvh;
+    }
+
+    display: block;
+
+    a {
+      color: var(--secondary-color);
+      cursor: pointer;
+    }
+  }
 }
