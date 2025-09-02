@@ -1,7 +1,7 @@
 [
     {
         "title": "Salut ! Je me présente,",
-        "text": "<section class=myself><p>Florian GUILLOU</p><p>France - Bretagne</p><p class=age></p><p>Véhiculé - Permis B</p></section><section class=languages><article><h4>Anglais - B2/C1</h4><p>Tenir une conversation avec précision</p></article><article><h4>Espagnol - B1</h4><p>Tenir une conversation simple</p></article></section><p>J'occupe un poste en CDI chez <a>RnP Vision</a> en tant que développeur Junior. Je suis passionné par <a>le monde sous-marin</a>, <a>l'automobile</a>, <a>la photographie</a> et <a>l'informatique</a>.</p>",
+        "text": "<section class=myself><p>Florian GUILLOU</p><p>France <img class=flag src=\"/assets/images/home/drapeau_fr.webp\"/> - Bretagne <img class=flag src=\"/assets/images/home/gwenn_ha_du.webp\"/></p><p class=age></p><p>Véhiculé - Permis B</p></section><section class=languages><article><h4>Anglais - B2/C1</h4><p>Tenir une conversation avec précision</p></article><article><h4>Espagnol - B1</h4><p>Tenir une conversation simple</p></article></section><p>J'occupe un poste en CDI chez <a>RnP Vision</a> en tant que développeur Junior, ce travail est une évidence, étant passionné par <a>l'informatique</a>. Cette passion n'est pas unique, puisque je suis également captivé par <a>l'automobile</a>, <a>la photographie</a> et <a>le monde sous-marin</a>.</p>",
         "imgUrl": "/assets/images/home/portrait.webp",
         "imgAlt": "Portrait",
         "defaultDisplay": "Main"

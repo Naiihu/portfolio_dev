@@ -12,9 +12,15 @@
     .myself,
     .languages {
       display: grid;
-      grid-template-columns: repeat(2, 45%);
-      column-gap: 5%;
+      grid-template-columns: repeat(2, calc(100% / 2 - 2.5%));
+      column-gap: 2.5%;
       margin-bottom: 1dvh;
+    }
+
+    img.flag {
+      height: 1.25rem;
+      border-radius: 2.5px;
+      vertical-align: middle;
     }
 
     display: block;
