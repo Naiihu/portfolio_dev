@@ -5,11 +5,63 @@ section#displayList {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
+    row-gap: 1dvh;
 
-    app-display {
-        height: calc(calc(100% / 3) - 2dvh);
+    #dataList_page_utils {
+        display: flex;
+        justify-content: center;
+        column-gap: 1dvw;
 
-        border-radius: 5px;
+        width: 50%;
+
+        a#dataList_page_prev,
+        a#dataList_page_next {
+            font-size: 1.25rem;
+            font-weight: bolder;
+            cursor: pointer;
+            user-select: none;
+
+            color: var(--main-color);
+            text-decoration: none;
+        }
+
+        section#dataList_page_indicators {
+            height: 100%;
+
+            display: flex;
+            column-gap: 1dvw;
+            align-items: center;
+
+            div.pageIndicator {
+                height: .5rem;
+                width: .5rem;
+                border-radius: 50%;
+                background-color: var(--main-color);
+                cursor: pointer;
+
+                &.active {
+                    background-color: var(--secondary-color);
+                }
+            }
+        }
     }
+
+    #dataList_displays {
+        flex: 1;
+        max-height: calc(100% - 1.25rem - 1dvh);
+
+        display: grid;
+        row-gap: 1dvh;
+        grid-template-rows: repeat(auto-fit, minmax(calc(calc(100% / 3) - 1dvh), 1fr));
+
+        app-display {
+            display: block;
+            height: 100%;
+            width: 100%;
+
+            border-radius: 5px;
+        }
+    }
+
 }
