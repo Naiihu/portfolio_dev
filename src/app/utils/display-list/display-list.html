@@ -1,7 +1,20 @@
 <section id="displayList" class="glassy">
-    @if (cards) {
-        @for (card of cards; track $index) {
-            <app-display [jsonContent]="card" class="draggable"></app-display>
-        }
+    @if(pageNumber) {
+        <div id="dataList_page_utils">
+            <a id="dataList_page_prev" href="#" (click)="this.prevPage()" (keypress)="this.prevPage($event)">&lt;</a>
+            <section id="dataList_page_indicators">
+                @for (_ of Array.from({length: pageNumber}); track $index) {
+                    <div class="pageIndicator {{ iCurrPage === $index ? 'active' : ''}}" tabindex="0" (click)="this.currPage$.next($index)" (keypress)="this.pageKeypress($event)"></div>
+                }
+            </section>
+            <a id="dataList_page_next" href="#" (click)="this.nextPage()" (keypress)="this.nextPage($event)">&gt;</a>
+        </div>
+    }
+    @if (displayedList) {
+        <section id="dataList_displays">
+            @for (card of displayedList; track $index) {
+                <app-display [jsonContent]="card" class="draggable"></app-display>
+            }
+        </section>
     }
 </section>
