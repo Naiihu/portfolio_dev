@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Display } from "../display/display";
 import { DisplayJsonContentInterface } from '../../interfaces/display-json-content.interface';
 import { Subject } from 'rxjs';
@@ -11,8 +11,6 @@ import { Subject } from 'rxjs';
 })
 export class DisplayList implements OnInit{
   @Input() cards: DisplayJsonContentInterface[] = [];
-
-  @ViewChildren(Display) displays!: QueryList<Display>;
 
   protected currPage$: Subject<number> = new Subject<number>();
   protected iCurrPage = 0;
