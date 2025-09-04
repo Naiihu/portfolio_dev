@@ -29,6 +29,7 @@ export class DisplayList implements OnInit{
 
     this.currPage$.subscribe((page: number) => {
       this.displayedList = this.cards.slice(page * 3, (page * 3) + 3);
+
       this.iCurrPage = page;
     });
 

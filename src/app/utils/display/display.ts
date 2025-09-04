@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, inject, Input, OnDestroy, OnInit, SecurityContext } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, inject, Input, OnChanges, OnDestroy, SecurityContext, SimpleChanges } from '@angular/core';
 import { DisplayJsonContentInterface } from '../../interfaces/display-json-content.interface';
 import { FrontendService } from '../../services/frontend.service';
 import { SvgIcons } from '../svg-icon/svg-icon';
@@ -12,7 +12,7 @@ import { Observable, of, Subscription } from 'rxjs';
   templateUrl: './display.html',
   styleUrl: './display.scss'
 })
-export class Display implements OnInit, OnDestroy {
+export class Display implements OnChanges, OnDestroy {
   @Input() jsonContent: DisplayJsonContentInterface = {
     title: 'Sample Title',
     text: 'Sample Text'
@@ -35,11 +35,17 @@ export class Display implements OnInit, OnDestroy {
   private cdr = inject(ChangeDetectorRef);
   protected element = inject(ElementRef);
 
-  ngOnInit(): void {
-    if (this.jsonContent.template) {
-      this.fetchHtml(this.jsonContent.template);
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['jsonContent']) {
+      this.initDisplay(changes['jsonContent'].currentValue);
+    }
+  }
+
+  public initDisplay(jsonContent: DisplayJsonContentInterface = this.jsonContent): void {
+    if (jsonContent.template) {
+      this.fetchHtml(jsonContent.template);
     } else {
-      this.sanitizeHtml(this.jsonContent.text ?? '').subscribe(value => {
+      this.sanitizeHtml(jsonContent.text ?? '').subscribe(value => {
         const domParser = new DOMParser();
         const doc = domParser.parseFromString(value, 'text/html');
         const ageElem = doc.querySelector('.age');
