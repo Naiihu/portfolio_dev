@@ -1,9 +1,14 @@
 [
     {
         "title": "Salut ! Je me présente,",
-        "text": "<section class=myself><p>Florian GUILLOU</p><p>France <img class=flag src=\"/assets/images/home/drapeau_fr.webp\"/> - Bretagne <img class=flag src=\"/assets/images/home/gwenn_ha_du.webp\"/></p><p class=age></p><p>Véhiculé - Permis B</p></section><section class=languages><article><h4>Anglais - B2/C1</h4><p>Tenir une conversation avec précision</p></article><article><h4>Espagnol - B1</h4><p>Tenir une conversation simple</p></article></section><p>J'occupe un poste en CDI chez <a>RnP Vision</a> en tant que développeur Junior, ce travail est une évidence, étant passionné par <a>l'informatique</a>. Cette passion n'est pas unique, puisque je suis également captivé par <a>l'automobile</a>, <a>la photographie</a> et <a>le monde sous-marin</a>. </p>",
+        "text": "<section class=myself><p>Florian GUILLOU</p><p>France <img class=flag src=\"/assets/images/home/drapeau_fr.webp\"/> - Bretagne <img class=flag src=\"/assets/images/home/gwenn_ha_du.webp\"/></p><p class=age></p><p>Véhiculé - Permis B</p></section><section class=languages><article><h4>Anglais - B2/C1</h4><p>Tenir une conversation avec précision</p></article><article><h4>Espagnol - B1</h4><p>Tenir une conversation simple</p></article></section><p>J'occupe un poste en CDI chez <a>RnP Vision</a> en tant que développeur Junior, ce travail est une évidence, étant passionné par <a>l'informatique</a>. Cette passion n'est pas unique, puisque je suis également captivé par <a>l'automobile</a>, <a>la photographie</a> et <a>le monde sous-marin</a>. J'espère que vous passerez un bon moment à la consultation de mon portfolio. Si vous êtes perdus sur le fonctionnement, n'hésitez pas à utiliser <a>le tutoriel</a> que vous pourrez également retrouver en haut à droite à côté du changement de thème !</p>",
         "imgUrl": "/assets/images/home/portrait.webp",
         "imgAlt": "Portrait",
+        "defaultDisplay": "Main"
+    },
+    {
+        "title": "Expériences professionnelles",
+        "template": "experiences",
         "defaultDisplay": "Main"
     },
     {
@@ -13,7 +18,7 @@
     },
     {
         "title": "RnP Vision",
-        "text": "<p>Développeur Junior - CDI</p>"
+        "text": "<section class=centerContent><h4>Développeur Junior</h4><h5 class=underline>Alternance Septembre 2023 - Août 2024</h5><h5 class=underline>CDI Septembre 2024 - <span class=today></span></h5></section><p>RnP Vision est une entreprise proposant un SaaS, Software as a Service, une solution par abonnement disponible en ligne. La solution proposée par RnP Vision vise à réduire les coûts, les délais d'intervention et rendre l'information disponible pour tous les métiers de l'eau et l'assainissement. <a href=https://www.rnpvision.com/ target=_blank>Site RnP Vision</a></p>"
     },
     {
         "title": "Passion informatique",
@@ -29,6 +34,6 @@
     },
     {
         "title": "Passion monde sous-marin",
-        "text": "<p>Depuis mon plus jeune âge, j'ai toujours été fasciné par les ordinateurs et la technologie. Cette passion m'a conduit à explorer divers aspects de l'informatique, notamment le développement web, la programmation et la cybersécurité. J'aime relever des défis techniques et apprendre continuellement de nouvelles compétences pour rester à jour dans ce domaine en constante évolution.</p>"
+        "text": "<p>Monde sous marin</p>"
     }
 ]

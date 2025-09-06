@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { FrontendService } from '../../services/frontend.service';
 
@@ -13,9 +13,7 @@ export class ThemeSwitcher implements OnInit, OnDestroy {
 
   private readonly aSubscriptions: Subscription[] = [];
 
-  constructor(
-    private readonly frontEndService: FrontendService
-  ) {}
+  private readonly frontEndService = inject(FrontendService);
 
   ngOnInit() {
     this.aSubscriptions.push(
@@ -45,7 +43,9 @@ export class ThemeSwitcher implements OnInit, OnDestroy {
       this.aSubscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
-  protected toggleTheme() {
-    this.colorTheme.next(this.colorTheme.getValue() === 'dark' ? 'light' : 'dark');
+  protected toggleTheme(event?: KeyboardEvent) {
+    if (event?.key === 't' || !event) {
+      this.colorTheme.next(this.colorTheme.getValue() === 'dark' ? 'light' : 'dark');
+    }
   }
 }

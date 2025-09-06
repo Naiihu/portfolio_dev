@@ -62,6 +62,16 @@ export class Display implements OnChanges, OnDestroy {
           value = doc.body.innerHTML;
         }
 
+        const todayElem = doc.querySelector('.today');
+
+        if (todayElem) {
+          const today = new Date();
+
+          const monthYear = today.toLocaleDateString('Fr', { month: 'long', year: 'numeric' });
+          todayElem.textContent = monthYear.charAt(0).toUpperCase() + monthYear.slice(1);
+          value = doc.body.innerHTML;
+        }
+
         this.htmlString = value;
       });
     }

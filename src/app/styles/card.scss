@@ -4,9 +4,32 @@
     flex-direction: column;
     row-gap: 0.5dvh;
 
+    display: block;
+
+    h3 {
+      img {
+        height: 5rem;
+      }
+    }
+
     p,
-    h4 {
+    h4,
+    h5 {
       margin: 0;
+    }
+
+    h5 {
+      font-weight: 600;
+    }
+
+    .centerContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .underline {
+      text-decoration: underline;
     }
 
     .myself,
@@ -23,11 +46,36 @@
       vertical-align: middle;
     }
 
-    display: block;
-
     a {
       color: var(--secondary-color);
       cursor: pointer;
+    }
+
+    ul ul {
+      list-style-type: none;
+      padding-left: 1dvw;
+    }
+  }
+}
+
+:root {
+  &.dark {
+    img.light-theme {
+      display: none;
+    }
+
+    img.dark-theme {
+      display: inline;
+    }
+  }
+
+  &.light {
+    img.light-theme {
+      display: inline;
+    }
+
+    img.dark-theme {
+      display: none;
     }
   }
 }
