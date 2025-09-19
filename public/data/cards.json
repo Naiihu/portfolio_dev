@@ -8,11 +8,19 @@
     },
     {
         "title": "Expériences professionnelles",
-        "template": "experiences",
+        "folder": "experiences",
+        "multiTemplates": {
+            "experiences": [
+                "rnpvision",
+                "college_of_staten_island",
+                "point_vert"
+            ]
+        },
         "defaultDisplay": "Main"
     },
     {
         "title": "Formations",
+        "folder": "formations",
         "template": "formations",
         "defaultDisplay": "Main"
     },
