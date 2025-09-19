@@ -1,1 +1,6 @@
-<p>modal works!</p>
+<div id="modal" class="glassy card" tabindex="0" (click)="$event.stopPropagation()" (keypress)="$event.stopPropagation()">
+    <ng-container
+        *ngComponentOutlet="this.component; inputs: this.inputs;">
+    </ng-container>
+    <button (click)="this.closeModal()" class="glassy">X</button>
+</div>

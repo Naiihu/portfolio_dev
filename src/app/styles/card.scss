@@ -4,8 +4,6 @@
     flex-direction: column;
     row-gap: 0.5dvh;
 
-    display: block;
-
     h3 {
       img {
         height: 5rem;
@@ -20,12 +18,6 @@
 
     h5 {
       font-weight: 600;
-    }
-
-    .centerContent {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     .underline {

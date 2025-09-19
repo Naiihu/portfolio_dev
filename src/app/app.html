@@ -13,6 +13,12 @@
     <app-main-displayer [cards]="this.mainCards"></app-main-displayer>
     <app-display-list [cards]="this.secondaryCards"></app-display-list>
   </section>
+  @if (this.modalService.modalStatus) {
+    <app-modal
+      [component]="this.modalComponent" [inputs]="this.modalService.modalInputs" class="centerContent"
+      (click)="this.modalService.closeModal()"
+    ></app-modal>
+  }
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
