@@ -1,0 +1,6 @@
+<section>
+    <div class="text" [innerHTML]="this.htmlString"></div>
+    <button class="glassy" (click)="this.toggleModal()">
+        {{ this.modalService.modalStatus ? 'Fermer' : 'Plus d\'informations'}}
+    </button>
+</section>

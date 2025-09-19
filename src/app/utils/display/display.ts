@@ -1,14 +1,15 @@
 import { ChangeDetectorRef, Component, ElementRef, inject, Input, OnChanges, OnDestroy, SecurityContext, SimpleChanges } from '@angular/core';
 import { DisplayJsonContentInterface } from '../../interfaces/display-json-content.interface';
-import { FrontendService } from '../../services/frontend.service';
+import { FrontendService } from '../../services/fontendService/frontend.service';
 import { SvgIcons } from '../svg-icon/svg-icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { HtmlService } from '../../services/html.service';
+import { HtmlService } from '../../services/htmlService/html.service';
 import { Observable, of, Subscription } from 'rxjs';
+import { TemplateRenderer } from "./template-renderer/template-renderer";
 
 @Component({
   selector: 'app-display',
-  imports: [SvgIcons],
+  imports: [SvgIcons, TemplateRenderer],
   templateUrl: './display.html',
   styleUrl: './display.scss'
 })
@@ -19,6 +20,7 @@ export class Display implements OnChanges, OnDestroy {
   };
 
   @Input() isSmall = false;
+  @Input() isInModal = false;
 
   protected elementId: number = Math.round(Math.random() * Date.now());
   protected hideDragZones = true;
@@ -35,15 +37,24 @@ export class Display implements OnChanges, OnDestroy {
   private cdr = inject(ChangeDetectorRef);
   protected element = inject(ElementRef);
 
+  protected Object = Object;
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['jsonContent']) {
       this.initDisplay(changes['jsonContent'].currentValue);
     }
   }
 
+  ngOnDestroy(): void {
+    this.aSubscriptions.forEach(subscription => subscription.unsubscribe());
+  }
+
   public initDisplay(jsonContent: DisplayJsonContentInterface = this.jsonContent): void {
     if (jsonContent.template) {
-      this.fetchHtml(jsonContent.template);
+      this.fetchHtml(`${jsonContent.template}/${jsonContent.template}`).then(value => {
+        this.htmlString = value;
+        this.cdr.detectChanges();
+      });
     } else {
       this.sanitizeHtml(jsonContent.text ?? '').subscribe(value => {
         const domParser = new DOMParser();
@@ -77,8 +88,14 @@ export class Display implements OnChanges, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
-    this.aSubscriptions.forEach(subscription => subscription.unsubscribe());
+  public fetchHtml(template: string): Promise<string> {
+    return new Promise<string>(resolve => {
+      this.htmlService.get(template).subscribe((html: string) => {
+        this.sanitizeHtml(html).subscribe(value => {
+          resolve(value);
+        });
+      });
+    });
   }
 
   /** */
@@ -111,16 +128,6 @@ export class Display implements OnChanges, OnDestroy {
 
   protected sanitizeHtml(text: string): Observable<string> {
     return of(this.domSanitizer.sanitize(SecurityContext.HTML, text) || '');
-  }
-
-  protected fetchHtml(template: string) {
-    this.htmlService.get(template).subscribe((html: string) => {
-      this.sanitizeHtml(html).subscribe(value => {
-        this.htmlString = value;
-
-        this.cdr.markForCheck();
-      });
-    });
   }
 
   private handleFigurePlacement(event: DragEvent) {
