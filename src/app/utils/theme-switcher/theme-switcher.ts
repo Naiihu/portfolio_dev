@@ -1,6 +1,6 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { FrontendService } from '../../services/frontend.service';
+import { FrontendService } from '../../services/fontendService/frontend.service';
 
 @Component({
   selector: 'app-theme-switcher',
