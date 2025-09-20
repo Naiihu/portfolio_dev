@@ -22,7 +22,7 @@
             <div [id]="`dragZone_${elementId}_${index}`" class="figurePlaceholder {{hideDragZones ? 'hidden' : ''}}"></div>
         }
         <div class="draggable" [id]="`utils_zone_${elementId}`">
-            <app-svg-icon name="resize"></app-svg-icon>
+            <app-svg-icon name="resize" (click)="this.setUniqueDisplay()"></app-svg-icon>
             <app-svg-icon name="dots"></app-svg-icon>
             <app-svg-icon name="grid"></app-svg-icon>
         </div>

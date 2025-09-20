@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { Display } from "../display/display";
 import { DisplayJsonContentInterface } from '../../interfaces/display-json-content.interface';
 import { Subject } from 'rxjs';
@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
   templateUrl: './display-list.html',
   styleUrl: './display-list.scss'
 })
-export class DisplayList implements OnInit{
+export class DisplayList implements OnChanges{
   @Input() cards: DisplayJsonContentInterface[] = [];
 
   protected currPage$: Subject<number> = new Subject<number>();
@@ -20,7 +20,7 @@ export class DisplayList implements OnInit{
   protected Array = Array;
   protected pageNumber = 0;
 
-  ngOnInit() {
+  ngOnChanges() {
     if (this.cards) {
       this.pageNumber = Math.ceil(this.cards.length / 3);
     }

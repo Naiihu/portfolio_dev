@@ -10,6 +10,7 @@ header {
         &#branding {
             display: flex;
             column-gap: 2dvw;
+            cursor: pointer;
 
             app-svg-logo {
                 height: 100%;

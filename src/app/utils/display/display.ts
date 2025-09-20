@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { HtmlService } from '../../services/htmlService/html.service';
 import { Observable, of, Subscription } from 'rxjs';
 import { TemplateRenderer } from "./template-renderer/template-renderer";
+import { CommunicationService } from '../../services/communicationService/communication.service';
 
 @Component({
   selector: 'app-display',
@@ -31,11 +32,12 @@ export class Display implements OnChanges, OnDestroy {
 
   private aSubscriptions: Subscription[] = [];
 
+  protected element = inject(ElementRef);
   private frontEndService = inject(FrontendService);
   private domSanitizer = inject(DomSanitizer);
   private htmlService = inject(HtmlService);
   private cdr = inject(ChangeDetectorRef);
-  protected element = inject(ElementRef);
+  private communicationService = inject(CommunicationService);
 
   protected Object = Object;
 
@@ -128,6 +130,10 @@ export class Display implements OnChanges, OnDestroy {
 
   protected sanitizeHtml(text: string): Observable<string> {
     return of(this.domSanitizer.sanitize(SecurityContext.HTML, text) || '');
+  }
+
+  protected setUniqueDisplay() {
+    this.communicationService.callDistantFunction('setUniqueMainDisplayed', this.jsonContent);
   }
 
   private handleFigurePlacement(event: DragEvent) {
