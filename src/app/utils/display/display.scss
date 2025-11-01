@@ -1,4 +1,4 @@
-section[id^=wrapper]{
+section[id^=wrapper] {
   height: calc(100% - calc(var(--default-vertical-padding) * 2));
   width: calc(100% - calc(var(--default-horizontal-padding) * 2));
   overflow-y: scroll;
@@ -26,15 +26,97 @@ section[id^=wrapper]{
 
     opacity: 0;
 
+    section {
+      height: 100%;
+      position: relative;
+
+      section.dropdown {
+        height: calc(var(--displayHeight) - 100% - calc(var(--default-vertical-padding) * 2));
+        overflow-y: scroll;
+
+        padding: 1dvh;
+        border-radius: 5px;
+
+        position: absolute;
+        top: 100%;
+
+        background-color: var(--background-color);
+
+        .scrollWrapper {
+          display: grid;
+          grid-template-columns: 47.5% 47.5%;
+          column-gap: 5%;
+          row-gap: 2dvh;
+
+          height: max-content;
+        }
+
+        article {
+          div {
+            height: 5dvh;
+            width: 5dvh;
+
+            &:hover {
+              background-color: var(--secondary-color);
+            }
+          }
+
+          &.vertical {
+            div {
+              height: 10dvh;
+            }
+          }
+
+          &.horizontal {
+            display: flex;
+            flex-direction: column;
+
+            div {
+              width: 10dvh;
+            }
+          }
+
+          &.threeLeft {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 50%;
+
+            div:nth-of-type(1) {
+              grid-column: 1/2;
+              grid-row: 1/3;
+              height: auto;
+            }
+          }
+
+          &.threeRight {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 50%;
+
+            div:nth-of-type(1) {
+              grid-column: 2/3;
+              grid-row: 1/3;
+              height: auto;
+            }
+          }
+
+          &.four {
+            grid-column: 1/3;
+            justify-self: center;
+          }
+        }
+      }
+    }
+
     app-svg-icon {
-        display: block;
-        height: 50%;
-        width: fit-content;
-        cursor: pointer;
+      display: block;
+      height: 50%;
+      width: fit-content;
+      cursor: pointer;
     }
 
     &:hover {
-        opacity: 1;
+      opacity: 1;
     }
 
     transition: opacity 250ms ease-in-out;
@@ -120,7 +202,6 @@ article {
 
       &.text {
         margin-top: 2dvh;
-
       }
     }
   }
@@ -154,7 +235,9 @@ article {
       --top: 35%;
     }
   }
-};
+}
+
+;
 
 @media screen and (orientation: portrait) {
   article {

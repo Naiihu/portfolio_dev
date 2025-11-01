@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, inject, Input, OnChanges, OnDestroy, SecurityContext, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, inject, Input, OnChanges, OnDestroy, SecurityContext, SimpleChanges, ViewChild } from '@angular/core';
 import { DisplayJsonContentInterface } from '../../interfaces/display-json-content.interface';
 import { FrontendService } from '../../services/fontendService/frontend.service';
 import { SvgIcons } from '../svg-icon/svg-icon';
@@ -14,7 +14,7 @@ import { CommunicationService } from '../../services/communicationService/commun
   templateUrl: './display.html',
   styleUrl: './display.scss'
 })
-export class Display implements OnChanges, OnDestroy {
+export class Display implements AfterViewInit, OnChanges, OnDestroy {
   @Input() jsonContent: DisplayJsonContentInterface = {
     title: 'Sample Title',
     text: 'Sample Text'
@@ -22,6 +22,8 @@ export class Display implements OnChanges, OnDestroy {
 
   @Input() isSmall = false;
   @Input() isInModal = false;
+
+  @ViewChild('dropdown', {static: true}) dropdownRef!: ElementRef<HTMLElement>;
 
   protected elementId: number = Math.round(Math.random() * Date.now());
   protected hideDragZones = true;
@@ -40,6 +42,12 @@ export class Display implements OnChanges, OnDestroy {
   private communicationService = inject(CommunicationService);
 
   protected Object = Object;
+
+  ngAfterViewInit(): void {
+    const displayHeight = this.element.nativeElement.clientHeight;
+
+    this.element.nativeElement.style.setProperty('--displayHeight', displayHeight + 'px');
+  };
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['jsonContent']) {

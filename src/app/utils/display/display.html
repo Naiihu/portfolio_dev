@@ -24,7 +24,37 @@
         <div class="draggable" [id]="`utils_zone_${elementId}`">
             <app-svg-icon name="resize" (click)="this.setUniqueDisplay()"></app-svg-icon>
             <app-svg-icon name="dots"></app-svg-icon>
-            <app-svg-icon name="grid"></app-svg-icon>
+            <section class="centerContent">
+                <app-svg-icon name="grid"></app-svg-icon>
+                <section #dropdown class="dropdown">
+                    <section class="scrollWrapper">
+                        <article class="vertical">
+                            <div class="draggable left"></div>
+                            <div class="draggable right"></div>
+                        </article>
+                        <article class="horizontal">
+                            <div class="draggable top"></div>
+                            <div class="draggable bottom"></div>
+                        </article>
+                        <article class="threeLeft">
+                            <div class="draggable left"></div>
+                            <div class="draggable top right"></div>
+                            <div class="draggable bottom right"></div>
+                        </article>
+                        <article class="threeRight">
+                            <div class="draggable right"></div>
+                            <div class="draggable top left"></div>
+                            <div class="draggable bottom left"></div>
+                        </article>
+                        <article class="four">
+                            <div class="draggable top left"></div>
+                            <div class="draggable top right"></div>
+                            <div class="draggable bottom left"></div>
+                            <div class="draggable bottom right"></div>
+                        </article>
+                    </section>
+                </section>
+            </section>
         </div>
     </article>
 </section>
