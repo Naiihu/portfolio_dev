@@ -2,7 +2,7 @@
     {
         "title": "Salut ! Je me présente,",
         "text": "<section class=myself><p>Florian GUILLOU</p><p>France <img class=flag src=\"/assets/images/home/drapeau_fr.webp\"/> - Bretagne <img class=flag src=\"/assets/images/home/gwenn_ha_du.webp\"/></p><p class=age></p><p>Véhiculé - Permis B</p></section><section class=languages><article><h4>Anglais - B2/C1</h4><p>Tenir une conversation avec précision</p></article><article><h4>Espagnol - B1</h4><p>Tenir une conversation simple</p></article></section><p>J'occupe un poste en CDI chez <a>RnP Vision</a> en tant que développeur Junior, ce travail est une évidence, étant passionné par <a>l'informatique</a>. Cette passion n'est pas unique, puisque je suis également captivé par <a>l'automobile</a>, <a>la photographie</a> et <a>le monde sous-marin</a>. J'espère que vous passerez un bon moment à la consultation de mon portfolio. Si vous êtes perdus sur le fonctionnement, n'hésitez pas à utiliser <a>le tutoriel</a> que vous pourrez également retrouver en haut à droite à côté du changement de thème !</p>",
-        "imgUrl": "/assets/images/home/portrait.webp",
+        "imgUrl": "/assets/images/home/portrait2.webp",
         "imgAlt": "Portrait",
         "defaultDisplay": "Main"
     },
