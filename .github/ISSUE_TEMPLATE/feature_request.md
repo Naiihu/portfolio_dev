@@ -1,9 +1,9 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
+title: "\U0001F468‍\U0001F373[ NEW FEATURE ] - "
 labels: ''
-assignees: ''
+assignees: Naiihu
 
 ---
 

@@ -1,9 +1,9 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
+title: "\U0001F41B [ BUG ] -"
 labels: ''
-assignees: ''
+assignees: Naiihu
 
 ---
 
