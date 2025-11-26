@@ -13,10 +13,10 @@ export class MainDisplayer {
 
   @ViewChildren(Display) displays!: QueryList<Display>;
 
-  protected defaultPositions: Record<number, string[]> = {
+  protected defaultPositions: Record<number, (string[] | string[][])> = {
     1: ["full"],
     2: ["top", "bottom"],
-    3: ["top", "bottom left", "bottom right"],
+    3: [["left", "bottom right", "top right"], ["right", "top left", "top right"]],
     4: ["top left", "top right", "bottom left", "bottom right"]
   };
 }

@@ -106,4 +106,8 @@ export class App implements OnInit, OnDestroy {
       }
     }
   }
+
+  private setCardPosition(jsonContent: DisplayJsonContentInterface, position: string) {
+
+  };
 }

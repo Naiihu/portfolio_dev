@@ -6,5 +6,6 @@ export interface DisplayJsonContentInterface {
     template?: string,
     multiTemplates?: Record<string, string[]>,
     folder?: string,
-    defaultDisplay?: 'Main'|'Secondary'
+    defaultDisplay?: 'Main'|'Secondary',
+    position?: Record<number, string>
 };
